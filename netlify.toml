@@ -1,4 +1,3 @@
-# netlify.toml (в корне репо)
 [build]
   command = "npm run build"
-  publish = "build"
+  publish = "dist"
