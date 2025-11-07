@@ -1,19 +1,27 @@
-import path from 'path';
-
+// cms/config/database.ts
 export default ({ env }) => {
-  const client = 'postgres'; // фиксируем, чтобы Strapi не переключался на sqlite/mysql
+  const isPg = !!env('DATABASE_URL'); // если есть строка подключения — используем Postgres
 
-  return {
-    connection: {
-      client,
+  if (isPg) {
+    return {
       connection: {
-        connectionString: env('DATABASE_URL'),
-        ssl: {
-          rejectUnauthorized: false,
+        client: 'postgres',
+        connection: {
+          connectionString: env('DATABASE_URL'),
+          ssl: { rejectUnauthorized: false }, // Render/Neon требуют SSL
         },
       },
-      pool: { min: 1, max: 10 },
-      acquireConnectionTimeout: env.int('DATABASE_CONNECTION_TIMEOUT', 60000),
+    };
+  }
+
+  // fallback для локалки на sqlite
+  return {
+    connection: {
+      client: 'sqlite',
+      connection: {
+        filename: env('DATABASE_FILENAME', '.tmp/data.db'),
+      },
+      useNullAsDefault: true,
     },
   };
 };
