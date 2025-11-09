@@ -1,20 +1,31 @@
-// import type { Core } from '@strapi/strapi';
-
+// cms/src/index.ts
 export default {
-  /**
-   * An asynchronous register function that runs before
-   * your application is initialized.
-   *
-   * This gives you an opportunity to extend code.
-   */
-  register(/* { strapi }: { strapi: Core.Strapi } */) {},
-
-  /**
-   * An asynchronous bootstrap function that runs before
-   * your application gets started.
-   *
-   * This gives you an opportunity to set up your data model,
-   * run jobs, or perform some special logic.
-   */
-  bootstrap(/* { strapi }: { strapi: Core.Strapi } */) {},
+  register({ strapi }) {
+    strapi.server.routes([
+      {
+        method: 'GET',
+        path: '/healthx',                 // URL будет /api/healthx при дефолтном префиксе
+        handler: (ctx) => {
+          const payload: any = {
+            ok: true,
+            env: process.env.NODE_ENV || 'development',
+            uptime: Math.round(process.uptime()),
+            timestamp: new Date().toISOString(),
+          };
+          // лёгкая проверка базы (необязательно)
+          try {
+            // @ts-ignore
+            if (strapi.db?.connection?.raw) {
+              // @ts-ignore
+              strapi.db.connection.raw('select 1');
+              payload.db = 'ok';
+            }
+          } catch { payload.db = 'fail'; }
+          ctx.set('Cache-Control', 'no-store');
+          ctx.body = payload;
+        },
+        config: { auth: false },
+      },
+    ]);
+  },
 };
