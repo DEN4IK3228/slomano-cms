@@ -1,16 +1,6 @@
-'use strict';
-
-module.exports = {
+// ESM!
+export default {
   routes: [
-    {
-      method: 'GET',
-      path: '/health',            // конечная точка будет /api/health
-      handler: 'health.index',
-      config: {
-        auth: false,              // публично, без JWT/ролей
-        policies: [],
-        middlewares: [],
-      },
-    },
+    { method: 'GET', path: '/health', handler: 'health.index', config: { auth: false } },
   ],
 };

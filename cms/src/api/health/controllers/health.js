@@ -1,25 +1,18 @@
-'use strict';
-
-module.exports = {
+// ESM!
+export default {
   async index(ctx) {
-    // минимальный ответ
     const payload = {
       ok: true,
       env: process.env.NODE_ENV || 'development',
-      uptime: Math.round(process.uptime()), // сек
+      uptime: Math.round(process.uptime()),
       timestamp: new Date().toISOString(),
     };
-
-    // опционально: проверка БД (Postgres/Knex)
     try {
       if (strapi.db?.connection?.raw) {
         await strapi.db.connection.raw('select 1');
         payload.db = 'ok';
       }
-    } catch (e) {
-      payload.db = 'fail';
-    }
-
+    } catch { payload.db = 'fail'; }
     ctx.set('Cache-Control', 'no-store');
     ctx.body = payload;
   },
