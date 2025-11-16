@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "desktop_videos",
+  "info": {
+    "singularName": "desktop-video",
+    "pluralName": "desktop-videos",
+    "displayName": "desktopVideo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

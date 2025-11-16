@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "mobile_videos",
+  "info": {
+    "singularName": "mobile-video",
+    "pluralName": "mobile-videos",
+    "displayName": "mobileVideo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
