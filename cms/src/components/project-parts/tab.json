@@ -23,6 +23,16 @@
     },
     "description": {
       "type": "text"
+    },
+    "mobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
     }
   },
   "config": {}

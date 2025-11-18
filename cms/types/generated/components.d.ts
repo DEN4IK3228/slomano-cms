@@ -13,6 +13,7 @@ export interface ProjectPartsTab extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios',
       true
     >;
+    mobile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
