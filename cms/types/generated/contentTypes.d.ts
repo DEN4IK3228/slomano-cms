@@ -508,11 +508,11 @@ export interface ApiDesktopVideoDesktopVideo extends Struct.SingleTypeSchema {
       'api::desktop-video.desktop-video'
     > &
       Schema.Attribute.Private;
+    pc_intro: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -530,10 +530,7 @@ export interface ApiGalleryGallery extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    image: Schema.Attribute.Media<
-      'images' | 'files' | 'videos' | 'audios',
-      true
-    >;
+    gallery: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -567,11 +564,11 @@ export interface ApiMobileVideoMobileVideo extends Struct.SingleTypeSchema {
       'api::mobile-video.mobile-video'
     > &
       Schema.Attribute.Private;
+    phone_intro: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    video: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
   };
 }
 
@@ -595,7 +592,6 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     dir: Schema.Attribute.String;
     dop: Schema.Attribute.String;
     favorite: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -603,6 +599,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     month: Schema.Attribute.Integer;
+    photo_prew: Schema.Attribute.String;
     prod: Schema.Attribute.String;
     proj: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;

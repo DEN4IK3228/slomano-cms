@@ -47,15 +47,8 @@
     "task": {
       "type": "text"
     },
-    "image": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "photo_prew": {
+      "type": "string"
     },
     "tabs": {
       "type": "component",
