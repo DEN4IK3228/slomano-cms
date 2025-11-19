@@ -11,15 +11,8 @@
     "code": {
       "type": "string"
     },
-    "media": {
-      "type": "media",
-      "multiple": true,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "video_url": {
+      "type": "string"
     },
     "description": {
       "type": "text"
