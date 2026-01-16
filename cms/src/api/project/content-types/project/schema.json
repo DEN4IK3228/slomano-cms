@@ -17,6 +17,9 @@
     "title2": {
       "type": "string"
     },
+    "link": {
+      "type": "string"
+    },
     "year": {
       "type": "integer"
     },

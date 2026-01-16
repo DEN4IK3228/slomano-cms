@@ -592,6 +592,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
     dir: Schema.Attribute.String;
     dop: Schema.Attribute.String;
     favorite: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    link: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
