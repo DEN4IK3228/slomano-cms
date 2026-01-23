@@ -584,6 +584,7 @@ export interface ApiProjectProject extends Struct.CollectionTypeSchema {
   };
   attributes: {
     about: Schema.Attribute.Text;
+    category: Schema.Attribute.String;
     cg: Schema.Attribute.Text;
     core: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;

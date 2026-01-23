@@ -64,6 +64,9 @@
     },
     "about": {
       "type": "text"
+    },
+    "category": {
+      "type": "string"
     }
   }
 }
