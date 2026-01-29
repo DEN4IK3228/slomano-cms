@@ -11,7 +11,7 @@
     "code": {
       "type": "string"
     },
-    "video_url": {
+    "video_uid": {
       "type": "string"
     },
     "description": {

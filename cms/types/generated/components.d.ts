@@ -10,7 +10,7 @@ export interface ProjectPartsTab extends Struct.ComponentSchema {
     description: Schema.Attribute.Text;
     frame: Schema.Attribute.String;
     mobile: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    video_url: Schema.Attribute.String;
+    video_uid: Schema.Attribute.String;
   };
 }
 
