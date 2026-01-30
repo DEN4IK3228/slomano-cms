@@ -14,15 +14,8 @@
     "info": {
       "type": "text"
     },
-    "about": {
-      "type": "media",
-      "multiple": false,
-      "allowedTypes": [
-        "images",
-        "files",
-        "videos",
-        "audios"
-      ]
+    "about_photo": {
+      "type": "string"
     }
   }
 }

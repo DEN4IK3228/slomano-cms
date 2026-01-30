@@ -441,7 +441,7 @@ export interface ApiBiographyBiography extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    about: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    about_photo: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
