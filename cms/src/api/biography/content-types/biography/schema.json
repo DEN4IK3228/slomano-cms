@@ -11,11 +11,29 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "about_photo": {
+      "type": "string"
+    },
     "info": {
       "type": "text"
     },
-    "about_photo": {
-      "type": "string"
+    "info2": {
+      "type": "text"
+    },
+    "info3": {
+      "type": "text"
+    },
+    "info4": {
+      "type": "text"
+    },
+    "info5": {
+      "type": "text"
+    },
+    "info6": {
+      "type": "text"
+    },
+    "info7": {
+      "type": "text"
     }
   }
 }

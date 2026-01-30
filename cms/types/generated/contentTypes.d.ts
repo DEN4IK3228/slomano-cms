@@ -446,6 +446,12 @@ export interface ApiBiographyBiography extends Struct.SingleTypeSchema {
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     info: Schema.Attribute.Text;
+    info2: Schema.Attribute.Text;
+    info3: Schema.Attribute.Text;
+    info4: Schema.Attribute.Text;
+    info5: Schema.Attribute.Text;
+    info6: Schema.Attribute.Text;
+    info7: Schema.Attribute.Text;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
